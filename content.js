@@ -1,6 +1,6 @@
 browser.storage.local.get(['use_pw', 'uname', 'pw']).then((i) => {
-	console.log(i);
-
+	console.log("moodle_autologin is installed");
+	
 	if (!i.use_pw) return;
 
 	uname = i.uname;
@@ -8,6 +8,8 @@ browser.storage.local.get(['use_pw', 'uname', 'pw']).then((i) => {
 
 	pw = i.pw;
 	if (!pw) return;
+
+	console.log("Running moodle_autologin using credentials of "+i.uname);
 
 	if (
 		document.querySelector("input#username") &&
